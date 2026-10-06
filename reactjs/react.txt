@@ -1,0 +1,13 @@
+React হলো একটি js library for building user interfaces.
+React ব্যবহার করে আমরা UI-কে ছোট ছোট reusable component-এ ভাগ করে তৈরি করি।
+
+Dashboard
+│
+├── Navbar
+├── Sidebar
+├── UserStats
+├── UserTable
+│   ├── UserRow
+│   ├── UserRow
+│   └── UserRow
+└── Footer
