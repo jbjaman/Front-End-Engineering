@@ -1,0 +1,56 @@
+Component হলো UI এর একটা reusable independent building block.
+
+function Button() {
+    return <button>LogIn</button>; // Functional
+}
+
+const Button = () =>{
+    return <button>LogIn</button>; // Arrow function
+}
+
+JSX -> JavaScript XML
+
+function App() {
+  const name = "Jubayer";
+
+  return (
+    <div>
+      <h1>Hello {name}</h1>
+      <p>Welcome to React</p>
+    </div>
+  );
+}
+
+
+
+// aita technically HTML noy. aita JSX Syntax. {name} এর মাধ্যমে JavaScript expression JSX-এর মধ্যে ব্যবহার করছি।
+
+JSX rules -->
+
+1. aktamatro parent/root: 
+
+return (
+  <div>
+    <h1>Hello</h1>
+    <p>World</p>
+  </div>
+);
+
+অথবা Fragment 
+
+return (
+  <>
+    <h1>Hello</h1>
+    <p>World</p>
+  </>
+);
+
+2. class নয় className:
+
+<div className="card">
+
+3. JS expression {} এর ভিতরে থাকে:
+
+const age = 25;
+
+return <p>Age: {age}</p>;

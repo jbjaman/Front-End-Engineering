@@ -15,3 +15,17 @@ Dashboard
 └── Footer
 
 প্রতিটি অংশ একটি component হতে পারে।
+
+React আমাদের UI কে declarative and component based ভাবে তৈরী করতে সাহায্য করে.
+
+মূল সুবিধা:
+
+- Reusable components
+- Declarative UI
+- Efficient UI updates
+- State-driven rendering
+- Large application maintainability
+- Ecosystem
+- React Router, testing libraries, data-fetching libraries ইত্যাদির সাথে কাজ করা যায় 
+
+React helps us build maintainable user interfaces using reusable components and declarative, state-driven rendering.
