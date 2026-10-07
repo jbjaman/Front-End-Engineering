@@ -1,0 +1,16 @@
+React-এ event handling JavaScript-এর মতোই, কিন্তু syntax কিছুটা আলাদা।
+
+function Button() {
+  function handleClick() {
+    console.log("Clicked");
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click Me
+    </button>
+  );
+}
+
+onClick = {handleClick} // function reference দেয়
+onClick = {handleClick()} // render-এর সময় function execute করে ফেলে।

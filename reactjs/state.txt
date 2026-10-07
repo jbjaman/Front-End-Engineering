@@ -1,0 +1,11 @@
+State হলো component-এর নিজস্ব পরিবর্তনশীল data, যার পরিবর্তনের সাথে UI update হতে পারে। State represents data that can change over time and affect what the component renders.
+
+| Props                            | State                              |
+| -------------------------------- | ---------------------------------- |
+| Parent থেকে আসে                  | Component নিজে manage করে          |
+| Read-only                        | পরিবর্তন করা যায় setter-এর মাধ্যমে |
+| Component-এর external input      | Component-এর internal data         |
+| Parent → Child                   | Component-এর own data              |
+| Props change হলে render হতে পারে | State change হলে render হতে পারে   |
+
+Props are read-only inputs passed from a parent component to a child, while state represents data managed by a component that can change over time and trigger UI updates.
