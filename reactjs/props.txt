@@ -1,0 +1,40 @@
+Props = properties
+Props হলো parent component থেকে child component-এ data পাঠানোর mechanism
+
+parent:
+
+function App(){
+    return <UserCard name="Jubayer"/>
+}
+
+child:
+
+function UserCard ({name}){
+    return <h2>{name}</h2>
+}
+
+rules: Props are read-only. Child component props পরিবর্তন করবে না। Props-এর data parent থেকে আসে।
+
+function UserCard({ name, age, role }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>Age: {age}</p>
+      <p>Role: {role}</p>
+    </div>
+  );
+}
+
+multiple props থাকতে পারে
+
+props এর মধ্যে প্রায় যেকোনো JS ভ্যালু পাঠানো যাবে. এমনকি function ও পাঠানো যাবে
+
+<User
+  name="Jubayer"
+  age={25}
+  active={true}
+  skills={["React", "JavaScript"]}
+  user={{ id: 1, role: "admin" }}
+/>
+
+<Button onClick={handleClick} /> এটা খুব গুরুত্বপূর্ণ। কারণ parent child-কে function pass করে child থেকে parent-কে event জানাতে পারে।
