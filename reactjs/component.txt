@@ -68,4 +68,4 @@ function Login() {
   );
 }
 
-এখানে input-এর value React state দ্বারা controlled হচ্ছে। এটাই controlled input/component।
+এখানে input-এর value React state দ্বারা controlled হচ্ছে। এটাই controlled input/component। 
