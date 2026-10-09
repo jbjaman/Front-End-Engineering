@@ -1,0 +1,50 @@
+// Conditional Rendering
+
+UI coondition অনুযায়ী render করা
+
+Ternary -> {isLoggedIn ? <Dashboard /> : <Login />}
+
+&& -> {isAdmin && <AdminPanel />}
+
+isAdmin === true হলে AdminPanel দেখাবে।
+
+// Render list
+
+const users = [
+  { id: 1, name: "Jubayer" },
+  { id: 2, name: "Rahim" },
+  { id: 3, name: "Karim" }
+];
+<ul>
+  {users.map(user => (
+    <li key={user.id}>
+      {user.name}
+    </li>
+  ))}
+</ul>
+
+key React-কে list-এর প্রতিটি item uniquely identify করতে সাহায্য করে
+
+// React Re-render
+
+State change হলে React পুরো browser page manually reload করে না। এখানে React-এর reconciliation process গুরুত্বপূর্ণ।
+
+// Virtual DOM
+
+React UI-এর একটি in-memory representation ব্যবহার করে। State/props change হলে React নতুন representation-এর সাথে আগেরটির comparison করে এবং প্রয়োজনীয় DOM updates apply করে।
+
+Vanilla JS-এ manually DOM manipulate :
+
+document.querySelector("#title").textContent = "Hello";
+
+React-এ UI state/data-এর উপর ভিত্তি করে describe করে :
+
+<h1>{title}</h1>
+
+তারপর state/data পরিবর্তন হলে React প্রয়োজনীয় UI update manage করে।
+
+Vanilla JS
+Data → manually manipulate DOM
+
+React
+Data/State → React rendering → UI

@@ -54,3 +54,18 @@ return (
 const age = 25;
 
 return <p>Age: {age}</p>;
+
+// Controlled Component
+
+function Login() {
+  const [email, setEmail] = useState("");
+
+  return (
+    <input
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+    />
+  );
+}
+
+এখানে input-এর value React state দ্বারা controlled হচ্ছে। এটাই controlled input/component।

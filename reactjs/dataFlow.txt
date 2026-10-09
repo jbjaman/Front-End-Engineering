@@ -1,0 +1,30 @@
+React-এর standard data flow হলো: Parent → Child
+
+function Parent(){
+    const name = "Jubayer";
+    return <Child name={name}/>;
+};
+
+function Child ({name}){
+    return <h1>{name}</h1>
+};
+
+এটাকে one-way data flow বলা হয়।
+
+React-এ সরাসরি child থেকে parent-এ data flow হয় না। Parent একটি function child-কে দেয়।
+
+function Parent() {
+  function handleMessage(message) {
+    console.log(message);
+  }
+
+  return <Child onMessage={handleMessage} />;
+}
+
+function Child({ onMessage }) {
+  return (
+    <button onClick={() => onMessage("Hello Parent")}>
+      Send
+    </button>
+  );
+}
