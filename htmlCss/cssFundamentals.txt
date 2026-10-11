@@ -1,0 +1,84 @@
+// CSS
+
+Cascading Style Sheets.
+HTML structure তৈরি করে; CSS নির্ধারণ করে সেই structure দেখতে কেমন হবে।
+
+// CSS Box Model
+
+Margin -> Border -> Padding(inner spacing) -> Content
+
+- Content: Text, image বা element-এর মূল content।
+- Padding: Content ও border-এর মাঝের জায়গা।
+- Border: Content ও padding-এর চারপাশের boundary।
+- Margin: Element-এর বাইরের spacing।
+
+সাধারণত এই rule ব্যবহার করা সুবিধাজনক: 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+এতে element-এর declared width-এর মধ্যে padding ও border গণনা করা হয়।
+
+// flexbox
+
+Flexbox মূলত one dimension-এ layout সাজানোর জন্য ব্যবহৃত হয়—একটি row অথবা column বরাবর।
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+display: flex —> flex layout চালু করে
+justify-content —> main axis বরাবর alignment
+align-items —> cross axis বরাবর alignment
+gap —> items-এর মধ্যে spacing
+flex-wrap: wrap —> প্রয়োজন হলে items-কে পরের লাইনে নেয়।
+
+// CSS Grid
+
+Grid row ও column-ভিত্তিক layout-এর জন্য সুবিধাজনক।
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+এতে তিনটি সমান-width column তৈরি হবে, যতক্ষণ container-এর জায়গা যথেষ্ট থাকে।
+
+// Flexbox vs Grid
+
+Flexbox	
+One-dimensional layout	
+Row বা column কেন্দ্রিক	
+Navbar, aligned buttons
+
+Grid
+Two-dimensional layout
+Rows ও columns একসঙ্গে
+Dashboard cards, page layout
+
+// CSS Specificity
+
+একই element-এর একই property-তে একাধিক CSS rule প্রযোজ্য হলে cascade, specificity, source order এবং !important-এর মতো বিষয় ফল নির্ধারণ করে।
+
+p {
+  color: blue;
+}
+
+.message {
+  color: green;
+}
+
+#status {
+  color: red;
+}
+
+<p id="status" class="message">Hello</p>
+
+এখানে সাধারণ পরিস্থিতিতে text লাল হবে, কারণ ID selector-এর specificity বেশি।

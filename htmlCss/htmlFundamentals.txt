@@ -23,3 +23,39 @@ Keyboard navigation ও accessibility উন্নত করা সহজ হয়
 Maintainability বাড়ে।
 
 Semantic HTML uses elements that describe the meaning and purpose of content, improving code readability, accessibility, and maintainability.
+
+div একটি generic container। এর নিজস্ব কোনো নির্দিষ্ট semantic meaning নেই।
+
+// htmml forms
+
+function LoginForm() {
+  return (
+    <form>
+      <label htmlFor="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autoComplete="email"
+        required
+      />
+
+      <label htmlFor="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autoComplete="current-password"
+        required
+      />
+
+      <button type="submit">Log in</button>
+    </form>
+  );
+}
+
+label-এর htmlFor সংশ্লিষ্ট input-এর id-এর সঙ্গে মেলে।
+type="email" উপযুক্ত browser-level validation দেয়।
+required field খালি থাকলে submission আটকাতে সাহায্য করে।
+type="submit" form submit করে।
+React-এ onSubmit দিয়ে submission handle করা যায়।
