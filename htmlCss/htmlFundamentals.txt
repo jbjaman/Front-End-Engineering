@@ -1,0 +1,25 @@
+// HTML
+
+HyperText Markup Language. এটি webpage-এর structure তৈরি করে।
+
+// Semantic HTML
+
+Semantic HTML এমন HTML elements ব্যবহার করে যেগুলোর অর্থ ও উদ্দেশ্য পরিষ্কার।
+
+<header>  ->	Page বা section-এর header
+<nav> ->	Navigation links
+<main>	-> Page-এর প্রধান content
+<section>	-> সম্পর্কিত content-এর section
+<article> ->	স্বতন্ত্র content
+<footer> ->	Footer content
+<button> -> কোনো action সম্পাদন
+<form> -> User input জমা দেওয়া
+
+important কারণ: 
+
+Code সহজে বোঝা যায়।
+Screen reader content-এর structure ভালোভাবে বুঝতে পারে।
+Keyboard navigation ও accessibility উন্নত করা সহজ হয়।
+Maintainability বাড়ে।
+
+Semantic HTML uses elements that describe the meaning and purpose of content, improving code readability, accessibility, and maintainability.
