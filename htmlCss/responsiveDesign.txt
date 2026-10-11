@@ -1,0 +1,51 @@
+// Responsive Design
+
+Responsive design হলো এমন UI তৈরি করা, যা বিভিন্ন screen size ও device-এ ব্যবহারযোগ্য থাকে।
+
+// Mobile first approach
+
+প্রথমে ছোট screen-এর layout তৈরি করবে। তারপর বড় screen-এর জন্য enhancement যোগ করবে।
+
+.user-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .user-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .user-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+// Media Query
+
+Media query হলো viewport বা device-এর বৈশিষ্ট্যের ভিত্তিতে CSS rule প্রয়োগ করার পদ্ধতি।
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+Responsive Design-এর গুরুত্বপূর্ণ নিয়ম
+- Fixed width-এর বদলে প্রয়োজনমতো %, rem, minmax() এবং flexible layout ব্যবহার করো।
+- Content container-এ max-width ব্যবহার করতে পারো।
+- Image-এ max-width: 100%; height: auto; ব্যবহার করো।
+- Flexbox/Grid দিয়ে layout সাজাও।
+- বাস্তব mobile viewport-এ পরীক্ষা করো।
+- Horizontal overflow, clipped text এবং ছোট click targets খেয়াল করো।
+
+.page-container {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+এতে container ছোট screen-এ কিছু horizontal spacing রাখবে এবং বড় screen-এ সর্বোচ্চ 1200px পর্যন্ত চওড়া হবে।
+
