@@ -1,0 +1,58 @@
+// GitHub
+
+Git: তোমার machine-এও কাজ করতে পারে; version history এবং branches manage করে।
+
+GitHub: Git repositories host করে এবং team collaboration, pull requests, issue tracking ও code review-এর সুবিধা দেয়।
+
+Git is a distributed version control system used to track code changes. GitHub is a platform for hosting Git repositories and collaborating through features such as pull requests and code reviews.
+
+// Branch কী এবং কেন দরকার?
+
+ধরো main branch-এ stable application আছে। তুমি নতুন User Search feature তৈরি করবে। Main branch-এ সরাসরি কাজ না করে:
+
+git switch -c feature/user-search
+
+এতে নতুন branch তৈরি হবে এবং তুমি সেখানে কাজ করতে পারবে।
+
+কাজ শেষে:
+
+git add .
+git commit -m "Add user search"
+git push -u origin feature/user-search
+
+এরপর GitHub-এ pull request খুলে review-এর জন্য পাঠাবে।
+
+// কেন branch ব্যবহার করি?
+
+- নতুন feature আলাদাভাবে develop করতে।
+- Bug fix-কে feature work থেকে আলাদা রাখতে।
+- Code review সহজ করতে।
+- Stable branch-এ unreviewed changes সরাসরি যোগ হওয়া এড়াতে।
+
+// git pull বনাম git push
+
+- git pull: Remote branch-এর changes fetch করে local branch-এ integrate করে।
+- git push: Local commits remote repository-তে পাঠায়।
+
+একটি সাধারণ sequence:
+git switch main
+git pull
+git switch -c feature/user-search
+
+Team-এর project-এ কাজ শুরুর আগে latest changes নেওয়া conflicts কমাতে সাহায্য করতে পারে।
+
+// Merge Conflict 
+
+ধরো দুইজন developer একই file-এর একই অংশ পরিবর্তন করেছেন। Git নিজে থেকে ঠিক করতে পারছে না কোন পরিবর্তন রাখা উচিত।
+এটাই merge conflict।
+
+তোমার কাজ:
+1. Conflict-এর দুই পাশের changes বোঝা।
+2. সঠিক combined result নির্বাচন করা।
+3. Conflict markers সরানো।
+4. File test করা।
+5. Resolved file stage করে commit করা।
+git add src/UsersPage.jsx
+git commit -m "Resolve users page merge conflict"
+
+সতর্কতা: Conflict markers না সরিয়ে commit করার চেষ্টা করবে না; merge state ও repository workflow অনুযায়ী commit-এর আগে resolution সম্পন্ন করতে হবে।

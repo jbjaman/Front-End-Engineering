@@ -1,0 +1,64 @@
+// Git
+
+Git হলো distributed version control system।
+Git দিয়ে code-এর পরিবর্তনের history track করা যায়, বিভিন্ন branch-এ আলাদা কাজ করা যায় এবং প্রয়োজন হলে আগের version inspect বা restore করা যায়।
+
+// GitHub
+
+GitHub হলো Git repository host ও collaborate করার একটি platform। Git এবং GitHub একই জিনিস নয়।
+
+// Git terminology
+
+Term ---------- অর্থ
+Repository -------------	Project এবং তার version history
+Working directory --------	যেখানে তুমি বর্তমান code edit করো
+Staging area ----------	পরবর্তী commit-এর জন্য নির্বাচিত changes
+Commit -------	Changes-এর recorded snapshot
+Branch -----------	আলাদা line of development
+Merge ----------	এক branch-এর changes অন্য branch-এ integrate করা
+Remote ----------	অন্য জায়গায় থাকা repository, যেমন GitHub
+Pull request (PR) --------	Changes review ও merge করার collaboration process
+
+// Git এর basic workflow
+
+git status -> প্রথমে status দেখবে
+git add . -> পরিবর্তন stage করবে
+git commit -m "Add user list component" -> তারপর commit
+git push -> Remote repository-তে পাঠাবে
+
+Edit code
+   ↓
+git status
+   ↓
+git add
+   ↓
+git commit
+   ↓
+git push
+   ↓
+Pull Request
+   ↓
+Review
+   ↓
+Merge
+
+git add . পুরো working directory-এর পরিবর্তন stage করতে পারে। তাই commit করার আগে git status দেখে নিশ্চিত হও যে অপ্রয়োজনীয় বা sensitive files stage হয়নি।
+
+// গুরুত্বপূর্ণ Git commands
+Command	---------- কাজ
+git init -------- নতুন local repository তৈরি
+git clone URL -------- Remote repository copy করা
+git status -------- Working tree ও staging status
+git add file --------- নির্দিষ্ট file stage করা
+git commit -m "message" ------- Commit তৈরি
+git log --oneline -------- Commit history দেখা
+git diff -------- Unstaged changes দেখা
+git branch ------ Branch list দেখা
+git switch branch-name -------- Branch পরিবর্তন
+git fetch --------- Remote changes ও refs fetch করা
+git pull ------- Fetch করে integrate করা
+git push ------- Commits remote-এ পাঠানো
+
+Sensitive data নিয়ে সতর্কতা
+.env ফাইলে API keys, database passwords বা secrets থাকলে সেগুলো GitHub-এ commit করবে না। .gitignore-এ প্রয়োজনীয় local files যোগ করবে।
+যদি secret ইতিমধ্যে commit/push হয়ে যায়, শুধু file delete করাই যথেষ্ট নয়—secret revoke বা rotate করতে হবে।
