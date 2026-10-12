@@ -1,0 +1,18 @@
+Accessibility বা a11y হলো এমন UI তৈরি করা, যা বিভিন্ন ধরনের ব্যবহারকারী—যেমন screen reader, keyboard navigation বা assistive technology ব্যবহারকারীরাও—ব্যবহার করতে পারেন।
+Accessibility শুধু disability-সংক্রান্ত বিষয় নয়; এটি usability-ও উন্নত করে।
+
+1. Semantic elements ব্যবহার
+2. Form labels
+3. Keyboard Accessibility
+
+ব্যবহারকারী যেন keyboard দিয়ে:
+- Links ও buttons-এ পৌঁছাতে পারেন।
+- Form পূরণ করতে পারেন।
+- Dialog খুললে ব্যবহার করতে এবং বন্ধ করতে পারেন।
+- Focus কোথায় আছে বুঝতে পারেন।
+Focusable element-এর outline অকারণে remove করবে না।
+
+4. Color Contrast ও Error Messages
+
+Text এবং background-এর মধ্যে যথেষ্ট contrast থাকতে হবে।
+শুধু color দিয়ে status বোঝানো উচিত নয়।
