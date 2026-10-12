@@ -1,0 +1,28 @@
+// debugging
+
+Debugging হলো software-এর problem শনাক্ত করা, তার কারণ বোঝা এবং সঠিক fix করা।
+
+Debugging is the process of identifying, isolating, and fixing the cause of a software defect. I reproduce the issue, inspect errors and application behavior, identify the root cause, apply a fix, and verify it with testing.
+
+Problem দেখা দিল
+      ↓
+সমস্যাটি reproduce করো
+      ↓
+Console ও Network পরীক্ষা করো
+      ↓
+সম্ভাব্য কারণ শনাক্ত করো
+      ↓
+সঠিক জায়গায় fix করো
+      ↓
+আবার test করো
+
+// React-এর সাধারণ bug
+
+সমস্যা	---------- কী পরীক্ষা করবে
+UI update হচ্ছে না -------- State সরাসরি mutate হয়েছে কি না
+User list খালি ---------- API response ও data structure
+Infinite requests --------- useEffect dependencies
+Button click হচ্ছে না ---------- Event handler, disabled state, overlay
+CSS কাজ করছে না --------- Selector, specificity, applied styles
+API request failed ---------- Network, URL, status, CORS
+React warning ------------ Console ও component code

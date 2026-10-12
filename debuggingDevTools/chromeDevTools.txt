@@ -1,0 +1,46 @@
+// chrome dev tools
+
+Chrome DevTools হলো browser-এর built-in development tools, যা webpage inspect, debug এবং performance analysis করতে সাহায্য করে।
+
+- F12
+- Ctrl + Shift + I
+- কোনো element-এর ওপর right-click → Inspect
+
+প্রধান panels:
+
+Panel  ----------	 কী কাজে লাগে
+
+Elements	------- HTML/DOM ও applied CSS inspect করা
+Console -------- JavaScript errors, warnings ও logs দেখা
+Network --------- API requests, status codes, response দেখা
+Sources -----------	JavaScript debug ও breakpoints ব্যবহার করা
+Application ------------- Cookies, local storage, session storage inspect করা
+Performance ---------- Rendering ও runtime performance বিশ্লেষণ করা
+
+console.log() দ্রুত সাহায্য করে, কিন্তু production debugging-এ শুধু log-এর ওপর নির্ভর করা উচিত নয়। অপ্রয়োজনীয় logs সরিয়ে ফেলবে।
+
+// Elements panel — UI ও CSS সমস্যা
+
+- কোন CSS rules apply হচ্ছে?
+- কোনো rule crossed out আছে কি?
+- অন্য selector কি style override করছে?
+- কোন element width বা margin বাড়িয়ে দিচ্ছে?
+- Responsive layout-এ কোন CSS rule কার্যকর হচ্ছে?
+
+rule-এর specificity ও source order বিবেচনা করে browser কোন style প্রয়োগ করছে, তা DevTools-এ দেখা যায়।
+
+DevTools-এ CSS পরিবর্তন করে পরীক্ষা করতে পারো। তবে সেই পরিবর্তনগুলো সাধারণত source file-এ automatically save হয় না। স্থায়ী fix করতে editor-এর code update করতে হবে।
+
+// Network panel — API debugging
+
+- Request URL সঠিক কি?
+- Request method GET নাকি ভুল করে অন্য কিছু?
+- Status code কী?
+- Response body-তে কী এসেছে?
+- Request pending আছে কি?
+- CORS বা network error আছে কি?
+- Request-এর সঙ্গে প্রয়োজনীয় headers পাঠানো হয়েছে কি?
+
+// Breakpoints and Sources Panel
+
+console.log() দিয়ে value দেখার পাশাপাশি breakpoint ব্যবহার করে execution থামানো যায়।
